@@ -4,5 +4,7 @@
   <p class="post-body"><%= @post.body %></p>
 </div>
 
-<%= link_to 'Edit', edit_post_path(@post), class: "post-btn" %>
-<%= button_to "Delete", @post, method: :delete, class: "post-btn" %>
+<% if current_user && current_user.email == @post.user.email %>
+  <%= link_to 'Edit', edit_post_path(@post), class: "post-btn" %>
+  <%= button_to "Delete", @post, method: :delete, class: "post-btn" %>
+<% end %>

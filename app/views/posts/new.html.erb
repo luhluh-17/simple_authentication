@@ -1,0 +1,32 @@
+<h1>New Post</h1>
+
+<div class="form-container">
+  <%= form_with(model: @post, local: true) do |form| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control', placeholder: "Enter title" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :body %>
+      <%= form.text_area :body, class: 'form-control', placeholder: "Enter body text" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: 'btn btn-primary', value: "Create Post" %>
+      <%= link_to 'Cancel', posts_path, class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>

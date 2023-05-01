@@ -10,7 +10,7 @@ class LoginsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to dashboards_path
+      redirect_to posts_path
     else
       flash[:alert] = 'Invalid email or password'
       render :new, status: :unauthorized

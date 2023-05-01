@@ -13,3 +13,120 @@
  *= require_tree .
  *= require_self
  */
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.post-title {
+  margin-top: 0;
+}
+
+.post-btn {
+  background-color: #f1f1f1;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.post-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.new-post-btn {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.new-post-btn:hover {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #2ecc71;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2ecc71;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #27ae60;
+}
+
+.btn-secondary {
+  color: #2ecc71;
+  background-color: #fff;
+  border: 2px solid #2ecc71;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #2ecc71;
+}

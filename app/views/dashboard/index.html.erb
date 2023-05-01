@@ -1,17 +1,15 @@
+<div class="new-post">
+  <%= link_to 'Create New Post', new_post_path, class: "new-post-btn" %>
+</div>
+
 <div class="posts">
   <% @posts.each do |post| %>
     <div class="post">
-      <h2 class="post-title"><%= post.title %></h2>
-      <h4 class="post-title"><%= post.user.email %></h4>
-      <div class="post-footer">
-        <%= link_to 'View', post, class: "post-btn" %>
-        <%= link_to 'Edit', edit_post_path(post), class: "post-btn" %>
-        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "post-btn" %>
-      </div>
+      <%= link_to post_path(post) do %>
+        <h2 class="post-title"><%= post.title %> by <%= post.user.email %></h2>
+      <% end %>
     </div>
   <% end %>
 </div>
 
-<div class="new-post">
-  <%= link_to 'Create New Post', new_post_path, class: "new-post-btn" %>
-</div>
+

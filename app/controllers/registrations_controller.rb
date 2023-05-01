@@ -1,5 +1,7 @@
 class RegistrationsController < ApplicationController
   def new
+    user = User.find_by(id: session[:user_id])
+    redirect_to dashboards_path if user
     @user = User.new
   end
 
@@ -9,7 +11,7 @@ class RegistrationsController < ApplicationController
     if @user.save
       redirect_to new_login_path
     else
-      flash[:alert] = "User could not be created."
+      flash[:alert] = 'User could not be created.'
       render :new, status: :unprocessable_entity
     end
   end
